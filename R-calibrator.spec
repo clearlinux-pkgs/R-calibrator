@@ -4,7 +4,7 @@
 #
 Name     : R-calibrator
 Version  : 1.2.6
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/calibrator_1.2-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/calibrator_1.2-6.tar.gz
 Summary  : Bayesian calibration of complex computer codes
