@@ -4,15 +4,12 @@
 #
 Name     : R-calibrator
 Version  : 1.2.8
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/calibrator_1.2-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/calibrator_1.2-8.tar.gz
 Summary  : Bayesian Calibration of Complex Computer Codes
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-cubature
-Requires: R-emulator
-Requires: R-mvtnorm
 BuildRequires : R-cubature
 BuildRequires : R-emulator
 BuildRequires : R-mvtnorm
@@ -33,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552069993
+export SOURCE_DATE_EPOCH=1552725031
 
 %install
-export SOURCE_DATE_EPOCH=1552069993
+export SOURCE_DATE_EPOCH=1552725031
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library calibrator|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  calibrator || :
 
 
 %files
