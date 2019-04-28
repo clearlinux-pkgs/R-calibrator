@@ -4,13 +4,12 @@
 #
 Name     : R-calibrator
 Version  : 1.2.8
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/calibrator_1.2-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/calibrator_1.2-8.tar.gz
 Summary  : Bayesian Calibration of Complex Computer Codes
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-Rcpp
 BuildRequires : R-Rcpp
 BuildRequires : R-cubature
 BuildRequires : R-emulator
@@ -32,10 +31,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556467149
+export SOURCE_DATE_EPOCH=1556485980
 
 %install
-export SOURCE_DATE_EPOCH=1556467149
+export SOURCE_DATE_EPOCH=1556485980
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
