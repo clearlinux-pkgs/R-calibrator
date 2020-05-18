@@ -4,7 +4,7 @@
 #
 Name     : R-calibrator
 Version  : 1.2.8
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/calibrator_1.2-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/calibrator_1.2-8.tar.gz
 Summary  : Bayesian Calibration of Complex Computer Codes
@@ -17,7 +17,6 @@ BuildRequires : R-cubature
 BuildRequires : R-emulator
 BuildRequires : R-mvtnorm
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 Kennedy and O'Hagan 2001.  The package includes routines to find the
@@ -28,21 +27,22 @@ Kennedy and O'Hagan 2001.  The package includes routines to find the
 
 %prep
 %setup -q -c -n calibrator
+cd %{_builddir}/calibrator
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571806775
+export SOURCE_DATE_EPOCH=1589771436
 
 %install
-export SOURCE_DATE_EPOCH=1571806775
+export SOURCE_DATE_EPOCH=1589771436
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
